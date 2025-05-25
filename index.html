@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文打字练习</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>英文打字练习</h1>
+            <div class="theme-toggle">
+                <button id="theme-btn">🌙 暗色模式</button>
+            </div>
+        </header>
+
+        <div class="test-area">
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label for="length">句子长度:</label>
+                    <input type="range" id="length" min="10" max="500" value="100">
+                    <span id="length-value">100</span> 字符
+                </div>
+                
+                <div class="setting-group">
+                    <label>
+                        <input type="checkbox" id="punctuation" checked>
+                        包含标点
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numbers">
+                        包含数字
+                    </label>
+                    <label>
+                        <input type="checkbox" id="lowercase">
+                        全小写
+                    </label>
+                </div>
+                
+                <div class="setting-group">
+                    <button id="generate" class="btn">生成新句子</button>
+                    <button id="restart" class="btn">重新开始</button>
+                </div>
+            </div>
+
+            <div class="text-display" id="text-display"></div>
+            
+            <textarea class="text-input" id="text-input" placeholder="开始输入..." rows="3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+            
+            <div class="timer" id="timer">0.0s</div>
+            
+            <div class="results" id="results">
+                <h2>测试结果</h2>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-value" id="wpm">0</div>
+                        <div class="result-label">WPM</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="cps">0</div>
+                        <div class="result-label">CPS</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="accuracy">0</div>
+                        <div class="result-label">准确率</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="backspaces">0</div>
+                        <div class="result-label">回改</div>
+                    </div>
+                </div>
+                <div class="result-footer">
+                    <p>按 <kbd>Enter</kbd> 键开始新测试</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>英文打字练习工具 © 2023</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
